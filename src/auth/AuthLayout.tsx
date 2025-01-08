@@ -1,6 +1,18 @@
+import { Navigate, Outlet } from "react-router-dom";
+import { AuthSideImg } from "../components/Index";
 const AuthLayout = () => {
+  const isAuth = false;
   return (
-    <div>AuthLayout</div>
+    <main>
+      {isAuth ? <Navigate to="/" replace={true} /> : (
+        <>
+          <section className="flex items-center justify-center gap-10">
+            <AuthSideImg />
+            <Outlet />
+          </section>
+        </>
+      )}
+    </main>
   )
 }
 
