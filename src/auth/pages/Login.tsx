@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Button } from "../../components/Index";
+import { Link } from 'react-router-dom';
+import { Button } from '../../components/Index';
 
 const LoginPage = () => {
   return (
@@ -14,12 +14,10 @@ const LoginPage = () => {
           <div className="mt-4">
             <form>
               <div className="mb-4">
-
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
                   htmlFor="username"
                 >
-
                   Username
                 </label>
                 <input
@@ -48,7 +46,9 @@ const LoginPage = () => {
             </form>
             <div className="flex flex-col items-center mt-4">
               <span className="text-xs">OR</span>
-              <Link to="/register" className=" text-primary">Create an account</Link>
+              <Link to="/register" className=" text-primary">
+                Create an account
+              </Link>
             </div>
           </div>
         </div>
