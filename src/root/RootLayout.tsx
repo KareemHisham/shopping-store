@@ -1,7 +1,12 @@
+import { Outlet } from 'react-router-dom';
+import NavBar from '../components/layout/nav/Nav';
 const RootLayout = () => {
   return (
-    <div>RootLayout</div>
-  )
-}
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
+};
 
-export default RootLayout
+export default RootLayout;
