@@ -1,4 +1,5 @@
 import HeroImg from '../../../public/assets/collection/hero.png';
+import HeroCard from './HeroCard';
 const Hero = () => {
   return (
     <section className="w-full h-[calc(100vh-73px)] relative">
@@ -7,6 +8,7 @@ const Hero = () => {
         alt="interior mockup wall decal background"
         className="w-full h-full object-cover"
       />
+      <HeroCard />
     </section>
   );
 };

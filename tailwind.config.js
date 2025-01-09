@@ -8,15 +8,17 @@ export default {
     extend: {
       colors: {
         primary: '#B88E2F',
+        secnodary: '#333333',
+        tertiary: '#FFF3E3',
         dark: '#333333',
         grey: '#666666',
       },
       fontSize: {
-        sm: ['18px', '24px'],
-        base: ['22px', '26px'],
-        lg: ['30px', '30px'],
-        xl: ['38px', '34px'],
-        xxl: ['46px', '34px'],
+        sm: ['18px'],
+        base: ['22px'],
+        lg: ['30px'],
+        xl: ['38px'],
+        xxl: ['46px'],
       },
     },
   },

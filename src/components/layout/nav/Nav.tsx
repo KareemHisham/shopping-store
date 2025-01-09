@@ -8,7 +8,7 @@ const NavBar = () => {
         {/** logo */}
         <div className="flex items-end gap-1">
           <img src={logo} alt="website logo" />
-          <h2 className="text-lg font-bold">Furniro</h2>
+          <h2 className="text-lg font-bold leading-none">Furniro</h2>
         </div>
         <NavLinks />
         <NavControls />
