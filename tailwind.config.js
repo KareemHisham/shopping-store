@@ -4,6 +4,7 @@ export default {
   theme: {
     container: {
       center: true,
+      padding: '2rem',
     },
     extend: {
       colors: {
@@ -12,6 +13,7 @@ export default {
         tertiary: '#FFF3E3',
         dark: '#333333',
         grey: '#666666',
+        lightGrey:"#9F9F9F"
       },
       fontSize: {
         sm: ['18px'],
