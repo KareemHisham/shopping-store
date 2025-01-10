@@ -5,6 +5,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
+      {/* Browse The Range */}
       <section className='py-4'>
         <div className="container">
 
@@ -26,6 +27,18 @@ const HomePage = () => {
             })}
 
           </div>
+        </div>
+      </section>
+      {/* Products */}
+      <section className='py-4'>
+        <div className="container">
+          <h4 className='text-dark text-lg font-bold text-center capitalize'>our products</h4>
+          <div>
+            <Link to="">
+            
+            </Link>
+          </div>
+
         </div>
       </section>
     </>
