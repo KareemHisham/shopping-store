@@ -80,8 +80,7 @@ export const PRODUCTS = [
         img: product_1,
         title: "Syltherine",
         description: "Stylish cafe chair",
-        priceAfterDiscount: 2.500,
-        oldPrice: 3.500,
+        price: 3.500,
         discount: 30,
         isNew: false,
         url: "/syltherine"
@@ -91,8 +90,7 @@ export const PRODUCTS = [
         img: product_2,
         title: "Leviosa",
         description: "Stylish cafe chair",
-        priceAfterDiscount: 2.500,
-        oldPrice: null,
+        price: 2.500,
         discount: null,
         isNew: false,
         url: "/Leviosa"
@@ -102,8 +100,7 @@ export const PRODUCTS = [
         img: product_3,
         title: "Lolito",
         description: "Luxury big sofa",
-        priceAfterDiscount: 7.000,
-        oldPrice: 14.000,
+        price: 7.000,
         discount: 50,
         isNew: false,
         url: "/lolito"
@@ -111,51 +108,51 @@ export const PRODUCTS = [
     {
         id: 4,
         img: product_4,
-        title: "dining",
-        description: "",
-        price: 150,
-        discount: 30,
+        title: "Respira",
+        description: "Outdoor bar table and stool",
+        price: 500,
+        discount: null,
         isNew: true,
-        url: "/dining"
+        url: "/respira"
     },
     {
         id: 5,
         img: product_5,
-        title: "dining",
-        description: "",
-        price: 150,
-        discount: 30,
-        isNew: true,
-        url: "/dining"
+        title: "Grifo",
+        description: "Night lamp",
+        price: 1.500,
+        discount: null,
+        isNew: false,
+        url: "/grifo"
     },
     {
         id: 6,
         img: product_6,
-        title: "dining",
-        description: "",
-        price: 150,
-        discount: 30,
+        title: "Muggo",
+        description: "Small mug",
+        price: 150.00,
+        discount: null,
         isNew: true,
-        url: "/dining"
+        url: "/muggo"
     },
     {
         id: 7,
         img: product_7,
-        title: "dining",
-        description: "",
-        price: 150,
-        discount: 30,
-        isNew: true,
-        url: "/dining"
+        title: "Pingky",
+        description: "Cute bed set",
+        price: 14.000,
+        discount: 50,
+        isNew: false,
+        url: "/pingky"
     },
     {
         id: 8,
         img: product_8,
-        title: "dining",
-        description: "",
-        price: 150,
-        discount: 30,
+        title: "Potty",
+        discription: "Minimalist flower pot",
+        price: 500.00,
+        discount: null,
         isNew: true,
-        url: "/dining"
+        url: "/potty"
     },
 ]

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Hero from '../../components/hero/Hero';
-import { SIMPLE_PRODUCT } from "../../constant/Index"
+import { SIMPLE_PRODUCT, PRODUCTS } from "../../constant/Index"
 const HomePage = () => {
   return (
     <>
@@ -32,11 +32,23 @@ const HomePage = () => {
       {/* Products */}
       <section className='py-4'>
         <div className="container">
-          <h4 className='text-dark text-lg font-bold text-center capitalize'>our products</h4>
-          <div>
-            <Link to="">
-            
-            </Link>
+          <h4 className='text-dark text-lg font-bold text-center capitalize mb-7'>our products</h4>
+          <div className=' grid grid-cols-4 gap-3'>
+            {PRODUCTS.map(product => {
+              return (
+                <Link to={product.url} key={product.id} className='bg-[#F4F5F7] relative'>
+                  <img src={product.img} alt={product.title} width={285} height={301} loading='lazy' />
+
+                  <div>
+                    <h3>{product.title}</h3>
+                    <p>{product.description}</p>
+                  </div>
+                  {product?.discount && <span className='absolute right-2 top-2 w-7 h-7 bg-[#E97171] text-white rounded-full text-xs flex items-center justify-center'>-{product.discount}</span>}
+                  {product?.isNew && <span className='absolute right-2 top-2 w-7 h-7 bg-[#2EC1AC] text-white rounded-full text-[10px] flex items-center justify-center'>New</span>}
+                </Link>
+
+              )
+            })}
           </div>
 
         </div>
