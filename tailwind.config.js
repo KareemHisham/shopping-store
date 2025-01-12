@@ -9,11 +9,11 @@ export default {
     extend: {
       colors: {
         primary: '#B88E2F',
-        secnodary: '#333333',
-        tertiary: '#FFF3E3',
         dark: '#333333',
+        tertiary: '#FFF3E3',
         grey: '#666666',
-        lightGrey:"#9F9F9F"
+        lightGrey:"#9F9F9F",
+        darkGrey:"#898989"
       },
       fontSize: {
         sm: ['18px'],

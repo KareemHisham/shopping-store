@@ -80,7 +80,7 @@ export const PRODUCTS = [
         img: product_1,
         title: "Syltherine",
         description: "Stylish cafe chair",
-        price: 3.500,
+        price: 3500,
         discount: 30,
         isNew: false,
         url: "/syltherine"
@@ -90,7 +90,7 @@ export const PRODUCTS = [
         img: product_2,
         title: "Leviosa",
         description: "Stylish cafe chair",
-        price: 2.500,
+        price: 2500,
         discount: null,
         isNew: false,
         url: "/Leviosa"
@@ -100,7 +100,7 @@ export const PRODUCTS = [
         img: product_3,
         title: "Lolito",
         description: "Luxury big sofa",
-        price: 7.000,
+        price: 7000,
         discount: 50,
         isNew: false,
         url: "/lolito"
@@ -110,7 +110,7 @@ export const PRODUCTS = [
         img: product_4,
         title: "Respira",
         description: "Outdoor bar table and stool",
-        price: 500,
+        price: 5000,
         discount: null,
         isNew: true,
         url: "/respira"
@@ -120,7 +120,7 @@ export const PRODUCTS = [
         img: product_5,
         title: "Grifo",
         description: "Night lamp",
-        price: 1.500,
+        price: 1500,
         discount: null,
         isNew: false,
         url: "/grifo"
@@ -130,7 +130,7 @@ export const PRODUCTS = [
         img: product_6,
         title: "Muggo",
         description: "Small mug",
-        price: 150.00,
+        price: 15000,
         discount: null,
         isNew: true,
         url: "/muggo"
@@ -140,7 +140,7 @@ export const PRODUCTS = [
         img: product_7,
         title: "Pingky",
         description: "Cute bed set",
-        price: 14.000,
+        price: 14000,
         discount: 50,
         isNew: false,
         url: "/pingky"
@@ -149,8 +149,8 @@ export const PRODUCTS = [
         id: 8,
         img: product_8,
         title: "Potty",
-        discription: "Minimalist flower pot",
-        price: 500.00,
+        description: "Minimalist flower pot",
+        price: 50000,
         discount: null,
         isNew: true,
         url: "/potty"
