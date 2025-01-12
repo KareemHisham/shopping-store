@@ -13,6 +13,11 @@ import product_6 from "../../public/assets/HomePage/product/product_6.png"
 import product_7 from "../../public/assets/HomePage/product/product_7.png"
 import product_8 from "../../public/assets/HomePage/product/product_8.png"
 
+import feature_1 from "../../public/assets/shapes/cup.png"
+import feature_2 from "../../public/assets/shapes/warranty.png"
+import feature_3 from "../../public/assets/shapes/shipping.png"
+import feature_4 from "../../public/assets/shapes/customer-support.png"
+
 
 
 export const FOOTER_links = [
@@ -154,5 +159,32 @@ export const PRODUCTS = [
         discount: null,
         isNew: true,
         url: "/potty"
+    },
+]
+
+export const FEATURES = [
+    {
+        id: 1,
+        title: "High Quality",
+        description: "crafted from top materials",
+        img: feature_1
+    },
+    {
+        id: 1,
+        title: "Warranty Protection",
+        description: "Over 2 years",
+        img: feature_2
+    },
+    {
+        id: 1,
+        title: "Free Shipping",
+        description: "Order over 150 $",
+        img: feature_3
+    },
+    {
+        id: 1,
+        title: "24 / 7 Support",
+        description: "Dedicated support",
+        img: feature_4
     },
 ]

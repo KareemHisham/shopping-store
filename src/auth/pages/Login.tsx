@@ -42,7 +42,7 @@ const LoginPage = () => {
                 />
               </div>
 
-              <Button type="submit">Login</Button>
+              <Button type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2">Login</Button>
             </form>
             <div className="flex flex-col items-center mt-4">
               <span className="text-xs">OR</span>

@@ -1,3 +1,8 @@
+export interface IButton {
+    type: "submit" | "button",
+    children: React.ReactNode,
+    classes:string
+}
 export interface IListItem {
     id: number;
     title: string;

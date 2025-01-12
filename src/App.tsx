@@ -1,7 +1,7 @@
 import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './root/pages/HomePage.tsx';
-import RootLayout from './root/RootLayout.tsx';
+
+import { RootLayout, HomePage, Products, ProductDetails } from "./root/Index.ts"
 
 const AppRouter = createBrowserRouter([
   {
@@ -11,6 +11,14 @@ const AppRouter = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
       },
     ],
   },

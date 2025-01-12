@@ -6,6 +6,7 @@ html {
   font-size: 20px;
   font-family: "Roboto", serif;
 }
+
 ::placeholder {
   font-size: 14px;
   color: #9F9F9F;
@@ -16,11 +17,13 @@ html {
     @apply flex flex-col gap-2 mb-2;
   }
 }
+
 @layer components {
   .form-control {
     @apply border-2 border-gray-300 rounded-md p-1 text-xs focus:border-primary outline-none text-grey;
   }
 }
+
 @layer components {
   .label {
     @apply text-xs text-grey font-medium;
@@ -32,13 +35,21 @@ html {
     @apply font-medium text-[16px] transition-all ease-linear duration-200 hover:text-primary hover:px-1;
   }
 }
+
 @layer components {
   .footer_title {
     @apply text-lightGrey font-medium text-sm;
   }
 }
+
 @layer components {
   .footer_list {
     @apply flex flex-col gap-2;
+  }
+}
+
+@layer components {
+  .btn_pagination {
+    @apply bg-[#F9F1E7] text-black py-1 px-3 rounded-md text-[12px] block w-fit;
   }
 }
