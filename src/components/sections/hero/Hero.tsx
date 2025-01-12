@@ -1,4 +1,4 @@
-import HeroImg from '../../../public/assets/collection/hero.png';
+import HeroImg from '../../../../public/assets/collection/hero.png';
 import HeroCard from './HeroCard';
 const Hero = () => {
   return (
