@@ -12,8 +12,8 @@ export default {
         dark: '#333333',
         tertiary: '#FFF3E3',
         grey: '#666666',
-        lightGrey:"#9F9F9F",
-        darkGrey:"#898989"
+        lightGrey: "#9F9F9F",
+        darkGrey: "#898989"
       },
       fontSize: {
         sm: ['18px'],
@@ -22,8 +22,15 @@ export default {
         xl: ['38px'],
         xxl: ['46px'],
       },
-      backgroundImage:{
-        'mini-hero':"url('./public/assets/collection/bg_miniHero.png')"
+      backgroundImage: {
+        'mini-hero': "url('./public/assets/collection/bg_miniHero.png')"
+      },
+      screens: {
+        'sm': '576px',
+        'md': '768px',
+        'lg': '992px',
+        'xl': '1024',
+        '2xl': '1300px'
       }
     },
   },
