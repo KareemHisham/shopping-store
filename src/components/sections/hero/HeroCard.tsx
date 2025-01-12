@@ -1,6 +1,6 @@
 const HeroCard = () => {
   return (
-    <div className="absolute w-9/12   right-[5%] bottom-[10%] lg:w-5/12 ps-6 py-8 bg-tertiary text-secnodary rounded-md shadow-sm">
+    <div className="absolute w-9/12   right-[5%] bottom-[10%] lg:w-5/12 ps-6 py-8 bg-#FFF3E3 text-secnodary rounded-md shadow-sm">
       <h3 className="text-sm ">New Arrival</h3>
       <h1 className=" text-primary text-xl font-bold leading-tight lg:text-xxl ">
         Discover Our <br /> New Collection

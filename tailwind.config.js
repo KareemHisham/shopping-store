@@ -10,10 +10,10 @@ export default {
       colors: {
         primary: '#B88E2F',
         dark: '#333333',
-        tertiary: '#FFF3E3',
+        tertiary: '#FAF3EA',
         grey: '#666666',
-        lightGrey: "#9F9F9F",
-        darkGrey: "#898989"
+        lightGrey: '#9F9F9F',
+        darkGrey: '#898989',
       },
       fontSize: {
         sm: ['18px'],
@@ -23,15 +23,15 @@ export default {
         xxl: ['46px'],
       },
       backgroundImage: {
-        'mini-hero': "url('./public/assets/collection/bg_miniHero.png')"
+        'mini-hero': "url('./public/assets/collection/bg_miniHero.png')",
       },
       screens: {
-        'sm': '576px',
-        'md': '768px',
-        'lg': '992px',
-        'xl': '1024',
-        '2xl': '1300px'
-      }
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1024',
+        '2xl': '1300px',
+      },
     },
   },
   plugins: [],
