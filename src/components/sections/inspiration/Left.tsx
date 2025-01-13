@@ -1,6 +1,6 @@
 const InspirationHeading = () => {
   return (
-    <div className="flex flex-col ps-10 justify-center h-full w-full md:w-5/12 ">
+    <div className="flex flex-col ps-10 justify-center  md:h-full w-full  md:w-5/12 ">
       <h2 className="text-xxl font-bold leading-10">
         50+ Beautiful rooms inspiration
       </h2>
