@@ -18,9 +18,9 @@ const InspirationList = () => {
         {/** status */}
         <div className="flex justify-start items-center gap-3 h-1/6">
           <span className="w-4 h-4 bg-primary"></span>
-          <span className="w-4 h-4 bg-primary"></span>
-          <span className="w-4 h-4 bg-primary"></span>
-          <span className="w-4 h-4 bg-primary"></span>
+          <span className="w-4 h-4 bg-slate-200"></span>
+          <span className="w-4 h-4 bg-slate-200"></span>
+          <span className="w-4 h-4 bg-slate-200"></span>
         </div>
       </div>
     </div>
