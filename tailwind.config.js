@@ -16,6 +16,7 @@ export default {
         darkGrey: '#898989',
       },
       fontSize: {
+        xs: ['14px'],
         sm: ['18px'],
         base: ['22px'],
         lg: ['30px'],

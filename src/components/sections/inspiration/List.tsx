@@ -12,10 +12,10 @@ const InspirationList = () => {
 
         <div className="absolute bottom-[5%] left-[5%] w-[55d%] flex items-end">
           <div className="bg-white bg-opacity-75 px-3 py-6">
-            <p className="text-sm">01 --- Bed Room</p>
-            <h2 className="text-lg font-bold">Inner Peace</h2>
+            <p className="text-xs lg:text-sm">01 --- Bed Room</p>
+            <h2 className="text-sm lg:text-lg font-bold">Inner Peace</h2>
           </div>
-          <div className="bg-primary text-white p-2 h-[20%] ">
+          <div className="bg-primary text-white p-1 h-[10%] lg:h-[20%] lg:p-2 ">
             <GoArrowRight />
           </div>
         </div>
@@ -23,8 +23,8 @@ const InspirationList = () => {
       {/** remaining */}
       <div className="flex-col overflow-hidden h-5/6 relative">
         {/** icon */}
-        <span className="absolute left-[calc(40vw-20px)] md:left-[calc(25vw-20px)] top-1/2 w-10 h-10 bg-white shadow-md rounded-full flex justify-center items-center cursor-pointer">
-          <IoIosArrowForward className="text-primary" />
+        <span className="absolute left-[calc(40vw-14px)] md:left-[calc(25vw-20px)] top-1/2 w-7 h-7 md:w-10 md:h-10 bg-white shadow-md rounded-full flex justify-center items-center cursor-pointer">
+          <IoIosArrowForward className="text-primary  " />
         </span>
         {/** img list */}
         <div className="flex gap-2 h-5/6">
