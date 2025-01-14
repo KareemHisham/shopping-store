@@ -1,7 +1,8 @@
 import { IProduct } from '../../../constant/Interfaces';
 import ProductImages from './ProductImages';
 import Rating from '../../ui/Rating';
-import Sizes from './Sizes';
+import Sizes from '../../ui/Sizes';
+import ProductColors from '../../ui/ProductColors';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
   return (
@@ -30,10 +31,10 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
             {/** sizes */}
             <Sizes sizes={['XL', 'L', 'SM']} active="XL" />
             {/** colors */}
-            <div>
-              <h4>colors</h4>
-              <div></div>
-            </div>
+            <ProductColors
+              colors={['#816DFA', '#000000', '#B88E2F']}
+              active="#B88E2F"
+            />
             {/** actions */}
             <div>
               <div>
