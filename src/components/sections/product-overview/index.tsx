@@ -3,14 +3,15 @@ import ProductImages from './ProductImages';
 import Rating from '../../ui/Rating';
 import Sizes from '../../ui/Sizes';
 import ProductColors from '../../ui/ProductColors';
+import Actions from './ProductActions';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
   return (
-    <section className="w-full h-[100vh]">
+    <section className="w-full h-[120vh]">
       <div className="container half-flex">
         <ProductImages />
         <div className="w-full  md:w-7/12 h-full">
-          <div className="h-4/6">
+          <div className="h-4/6 flex flex-col justify-between">
             {/** heading */}
             <div>
               <h1 className="text-xl font-bold">Asgaard sofa</h1>
@@ -22,7 +23,7 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
               </div>
             </div>
             {/**description */}
-            <p>
+            <p className="text-sm">
               Setting the bar as one of the loudest speakers in its class, the
               Kilburn is a compact, stout-hearted hero with a well-balanced
               audio which boasts a clear midrange and extended highs for a
@@ -36,16 +37,9 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
               active="#B88E2F"
             />
             {/** actions */}
-            <div>
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <button>Add To Cart</button>
-              <button>+Compare</button>
-            </div>
+            <Actions />
           </div>
+
           {/** info */}
           <div></div>
         </div>

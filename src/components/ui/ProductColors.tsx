@@ -4,7 +4,7 @@ interface ColorsProps<T extends string[]> {
 }
 const ProductColors = ({ colors, active }: ColorsProps<string[]>) => {
   return (
-    <div className="text-sm mt-2">
+    <div className="text-sm ">
       <h4 className="text-gray-300">Color</h4>
       <div className="flex gap-4 mt-1">
         {colors.map((color) => (
