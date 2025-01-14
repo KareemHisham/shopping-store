@@ -15,21 +15,18 @@ const MiniHero = ({ children, breadcrumbLinks }: IMiniHero) => {
                 link.path ? 'text-[16px] font-medium' : 'text-xs font-light'
               }
             >
-              {' '}
               {link.path ? (
                 <Link to={link.path} className="flex items-center gap-1">
-                  {' '}
                   <span className="hover:text-primary transition-colors duration-300">
-                    {' '}
-                    {link.name}{' '}
-                  </span>{' '}
+                    {link.name}
+                  </span>
                   <span>
                     <FaAngleRight />
-                  </span>{' '}
+                  </span>
                 </Link>
               ) : (
                 link.name
-              )}{' '}
+              )}
             </li>
           ))}
         </ul>
