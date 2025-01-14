@@ -58,3 +58,8 @@ html {
     @apply h-full w-full object-cover;
   }
 }
+@layer components {
+  .half-flex {
+    @apply flex h-full flex-col md:flex-row gap-5;
+  }
+}

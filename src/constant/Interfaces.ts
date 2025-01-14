@@ -10,7 +10,7 @@ export interface IListItem {
   title: string;
   url: string;
 }
-export interface IProductList {
+export interface IProduct {
   id: number;
   img: string;
   title: string;
