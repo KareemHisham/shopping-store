@@ -4,7 +4,7 @@ import { PRODUCTS, FEATURES } from '../../constant/Index';
 const Products = () => {
   return (
     <>
-      <MiniHero>
+      <MiniHero breadcrumbLinks={[{ name: 'Home', path: '/' }]}>
         <h1 className="text-xl font-bold tracking-[5px]">Shop</h1>
       </MiniHero>
       {/* Products */}

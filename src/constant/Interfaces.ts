@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IButton {
   type: 'submit' | 'button';
   children: React.ReactNode;
@@ -23,4 +25,8 @@ export interface IProgressItem {
   id: number;
   img: string;
   description: string;
+}
+export interface IMiniHero {
+  children: ReactNode;
+  breadcrumbLinks: { name: string; path: string }[];
 }
