@@ -1,6 +1,7 @@
 import { IProduct } from '../../../constant/Interfaces';
 import ProductImages from './ProductImages';
 import Rating from '../../ui/Rating';
+import Sizes from './Sizes';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
   return (
@@ -11,10 +12,12 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
           <div className="h-4/6">
             {/** heading */}
             <div>
-              <h1 className="text-lg font-bold">Asgaard sofa</h1>
-              <p className="text-gray-200">Rs. 250,000.00</p>
-              <div>
+              <h1 className="text-xl font-bold">Asgaard sofa</h1>
+              <p className="text-gray-300">Rs. 250,000.00</p>
+              <div className="flex items-center content-between gap-2 my-2">
                 <Rating rate={3} />
+                <span className="text-gray-300">|</span>
+                <p className="text-gray-300">5 Customer Review</p>
               </div>
             </div>
             {/**description */}
@@ -25,10 +28,7 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
               sound.
             </p>
             {/** sizes */}
-            <div>
-              <h4>Sizes</h4>
-              <div></div>
-            </div>
+            <Sizes sizes={['XL', 'L', 'SM']} active="XL" />
             {/** colors */}
             <div>
               <h4>colors</h4>
