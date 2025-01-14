@@ -4,6 +4,9 @@ import Pagination from './temp/Pagination';
 import Footer from './layout/footer/Footer';
 import NavBar from './layout/nav/Nav';
 
+// Sections
+import ProductsSection from "./sections/products/index"
+
 import FooterList from './layout/footer/FooterList';
 import ProductCard from './temp/ProductCard';
 import MiniHero from './sections/hero/MiniHero';
@@ -20,4 +23,5 @@ export {
   ProductCard,
   MiniHero,
   Pagination,
+  ProductsSection
 };

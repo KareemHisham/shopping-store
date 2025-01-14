@@ -4,7 +4,7 @@ import { PRODUCTS, FEATURES } from '../../constant/Index';
 const Products = () => {
   return (
     <>
-      <MiniHero breadcrumbLinks={[{ name: 'Home', path: '/' }]}>
+      <MiniHero breadcrumbLinks={[{ name: 'Home', path: '/'}]}>
         <h1 className="text-xl font-bold tracking-[5px]">Shop</h1>
       </MiniHero>
       {/* Products */}
@@ -17,7 +17,6 @@ const Products = () => {
           </div>
           {/* Pagination */}
           <Pagination />
-          {/*  */}
         </div>
         <section className="py-3 mt-6 bg-tertiary">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:justify-items-start lg:justify-items-center">
