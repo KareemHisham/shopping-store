@@ -17,7 +17,7 @@ const MiniHero = ({ children, breadcrumbLinks }: IMiniHero) => {
             >
               {link.path ? (
                 <Link to={link.path} className="flex items-center gap-1">
-                  <span className="hover:text-primary transition-colors duration-300">
+                  <span className="hover:text-primary transition-colors duration-300 font-semibold">
                     {link.name}
                   </span>
                   <span>

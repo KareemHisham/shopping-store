@@ -7,9 +7,13 @@ import NavBar from './layout/nav/Nav';
 // Sections
 import ProductsSection from "./sections/products/index"
 
+// Forms
+import ContactForm from "./forms/ContactForm"
+
 import FooterList from './layout/footer/FooterList';
 import ProductCard from './temp/ProductCard';
 import MiniHero from './sections/hero/MiniHero';
+import Features from "./sections/features/Index"
 
 // UI
 import Button from './ui/Button';
@@ -23,5 +27,7 @@ export {
   ProductCard,
   MiniHero,
   Pagination,
-  ProductsSection
+  ProductsSection,
+  Features,
+  ContactForm
 };

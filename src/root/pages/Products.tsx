@@ -1,10 +1,10 @@
-import { MiniHero, Pagination, ProductCard } from '../../components/Index';
-import { PRODUCTS, FEATURES } from '../../constant/Index';
+import { MiniHero, Pagination, ProductCard, Features } from '../../components/Index';
+import { PRODUCTS } from '../../constant/Index';
 
 const Products = () => {
   return (
     <>
-      <MiniHero breadcrumbLinks={[{ name: 'Home', path: '/'}]}>
+      <MiniHero breadcrumbLinks={[{ name: 'Home', path: '/' }]}>
         <h1 className="text-xl font-bold tracking-[5px]">Shop</h1>
       </MiniHero>
       {/* Products */}
@@ -18,31 +18,7 @@ const Products = () => {
           {/* Pagination */}
           <Pagination />
         </div>
-        <section className="py-3 mt-6 bg-tertiary">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:justify-items-start lg:justify-items-center">
-            {FEATURES.map((feature) => {
-              return (
-                <div key={feature.id} className="p-4 flex items-center gap-2">
-                  <img
-                    src={feature.img}
-                    alt={feature.title}
-                    width={50}
-                    height={50}
-                    loading="lazy"
-                  />
-                  <div>
-                    <h3 className="lg:text-xs 2xl:text-sm font-semibold">
-                      {feature.title}
-                    </h3>
-                    <p className="text-xs text-lightGrey">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        <Features />
       </section>
     </>
   );
