@@ -5,9 +5,9 @@ interface SizesProps<T extends string[]> {
 
 const Sizes = <T extends string[]>({ sizes, active }: SizesProps<T>) => {
   return (
-    <div className="text-sm mt-2">
-      <h4 className="text-gray-300">Sizes</h4>
-      <div className="flex gap-2">
+    <div className="text-sm ">
+      <h4 className="text-gray-300 ">Size</h4>
+      <div className="flex gap-2 mt-1">
         {sizes.map((size) => (
           <span
             key={size}

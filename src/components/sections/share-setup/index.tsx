@@ -2,7 +2,6 @@ import { PRODUCTS } from '../../../constant/Index';
 
 const ShareSetup = () => {
   const randomRowSpan = () => Math.ceil(Math.random() * 3);
-
   const randomColsSpan = () => Math.ceil(Math.random() * 2);
   return (
     <section className="w-full mt-8 ">
@@ -21,7 +20,11 @@ const ShareSetup = () => {
         {PRODUCTS.map((product) => (
           <div
             key={product.id}
-            className={`block overflow-hidden  row-span-${randomRowSpan()}  col-span-${randomColsSpan()} `}
+            className={`block overflow-hidden`}
+            style={{
+              gridRowEnd: `span ${randomRowSpan()}`,
+              gridColumnEnd: `span ${randomColsSpan()}`,
+            }}
           >
             <img
               src={product.img}
