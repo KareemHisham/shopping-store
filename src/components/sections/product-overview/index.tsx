@@ -4,6 +4,7 @@ import Rating from '../../ui/Rating';
 import Sizes from '../../ui/Sizes';
 import ProductColors from '../../ui/ProductColors';
 import Actions from './ProductActions';
+import ProductSummary from './ProductSummary';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
   return (
@@ -41,7 +42,7 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
           </div>
 
           {/** info */}
-          <div></div>
+          <ProductSummary />
         </div>
       </div>
     </section>
