@@ -1,7 +1,7 @@
-import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { RootLayout, HomePage, Products, ProductDetails } from "./root/Index.ts"
+import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
+import { RootLayout, HomePage, Products, ProductDetails, ContactUs } from "./root/Index.ts"
 
 const AppRouter = createBrowserRouter([
   {
@@ -20,6 +20,10 @@ const AppRouter = createBrowserRouter([
         path: "/products/:id",
         element: <ProductDetails />,
       },
+      {
+        path: "/contact-us",
+        element: <ContactUs />
+      }
     ],
   },
   {
