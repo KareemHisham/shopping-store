@@ -12,7 +12,7 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
       <div className="container half-flex">
         <ProductImages />
         <div className="w-full  md:w-7/12 h-4/6 md:h-full">
-          <div className="h-4/6 flex flex-col justify-between">
+          <div className="h-4/6 flex flex-col md:justify-between gap-2 md:gap-0">
             {/** heading */}
             <div>
               <h1 className="text-xl font-bold">Asgaard sofa</h1>
