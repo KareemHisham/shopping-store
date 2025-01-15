@@ -8,7 +8,7 @@ import ProductSummary from './ProductSummary';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
   return (
-    <section className="w-full h-[200vh] md:h-[120vh]">
+    <section className="w-full h-[180vh] md:h-[120vh]">
       <div className="container half-flex">
         <ProductImages />
         <div className="w-full  md:w-7/12 h-4/6 md:h-full">
