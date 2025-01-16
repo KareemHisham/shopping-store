@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
-import { RootLayout, HomePage, Products, ProductDetails, ContactUs, Cart } from "./root/Index.ts"
+import { RootLayout, HomePage, Products, ProductDetails, ContactUs, Cart, Checkout } from "./root/Index.ts"
 
 const AppRouter = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ const AppRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       }
     ],
   },

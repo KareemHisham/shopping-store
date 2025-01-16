@@ -14,7 +14,7 @@ html {
 
 @layer components {
   .form-group {
-    @apply flex flex-col gap-2 mb-2;
+    @apply flex flex-col gap-2 mb-3;
   }
 }
 
@@ -63,8 +63,11 @@ html {
     @apply flex h-full flex-col md:flex-row gap-5;
   }
 }
-
-
+@layer components {
+  .flex_wrapper {
+    @apply flex items-center justify-between;
+  }
+}
 .table {
   display: table; 
   width: 100%;

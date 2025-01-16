@@ -9,6 +9,7 @@ import ProductsSection from "./sections/products/index"
 
 // Forms
 import ContactForm from "./forms/ContactForm"
+import CheckoutForm from "./forms/CheckoutForm"
 
 import FooterList from './layout/footer/FooterList';
 import ProductCard from './temp/ProductCard';
@@ -29,5 +30,6 @@ export {
   Pagination,
   ProductsSection,
   Features,
-  ContactForm
+  ContactForm,
+  CheckoutForm
 };
