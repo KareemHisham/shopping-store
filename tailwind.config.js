@@ -14,6 +14,7 @@ export default {
         grey: '#666666',
         lightGrey: '#9F9F9F',
         darkGrey: '#898989',
+        lightPink:"#F9F1E7"
       },
       fontSize: {
         xs: ['14px'],

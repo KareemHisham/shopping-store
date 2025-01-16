@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Roboto', serif;
 }
 
@@ -62,4 +62,20 @@ html {
   .half-flex {
     @apply flex h-full flex-col md:flex-row gap-5;
   }
+}
+
+
+.table {
+  display: table; 
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;  
+}
+
+.table-cell {
+  display: table-cell; 
+  padding: 10px;
+  text-align: left;
 }

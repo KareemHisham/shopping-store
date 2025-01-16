@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
-import { RootLayout, HomePage, Products, ProductDetails, ContactUs } from "./root/Index.ts"
+import { RootLayout, HomePage, Products, ProductDetails, ContactUs, Cart } from "./root/Index.ts"
 
 const AppRouter = createBrowserRouter([
   {
@@ -23,6 +23,10 @@ const AppRouter = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ],
   },
