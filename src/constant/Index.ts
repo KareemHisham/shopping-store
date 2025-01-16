@@ -167,19 +167,19 @@ export const FEATURES = [
     img: feature_1,
   },
   {
-    id: 1,
+    id: 2,
     title: 'Warranty Protection',
     description: 'Over 2 years',
     img: feature_2,
   },
   {
-    id: 1,
+    id: 3,
     title: 'Free Shipping',
     description: 'Order over 150 $',
     img: feature_3,
   },
   {
-    id: 1,
+    id: 4,
     title: '24 / 7 Support',
     description: 'Dedicated support',
     img: feature_4,
