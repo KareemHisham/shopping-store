@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { ReactNode } from 'react';
 
-const IconBtn = ({ children }: { children: ReactNode }) => {
+const IconBtn = ({ children, url }: { children: ReactNode, url: string }) => {
   return (
-    <button className="flex justify-center items-center cursor-pointer">
+    <Link to={url} className="flex justify-center items-center cursor-pointer">
       {children}
-    </button>
+    </Link>
   );
 };
 

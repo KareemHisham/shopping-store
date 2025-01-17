@@ -1,22 +1,15 @@
-import IconBtn from '../../../ui/buttons/IconBtn';
-import CartIcon from '../../../ui/svg/CartIcon';
-import LoveIcon from '../../../ui/svg/LoveIcon';
-import SearchIcon from '../../../ui/svg/SearchIcon';
-import UserIcon from '../../../ui/svg/UserIcon';
+import { CartIcon, IconBtn, LoveIcon, UserIcon } from "../../../Index";
 
 const NavControls = () => {
   return (
-    <div className="flex gap-4">
-      <IconBtn>
+    <div className="flex gap-5">
+      <IconBtn url="login">
         <UserIcon />
       </IconBtn>
-      <IconBtn>
-        <SearchIcon />
-      </IconBtn>
-      <IconBtn>
+      <IconBtn url="favourite">
         <LoveIcon />
       </IconBtn>
-      <IconBtn>
+      <IconBtn url="cart">
         <CartIcon />
       </IconBtn>
     </div>

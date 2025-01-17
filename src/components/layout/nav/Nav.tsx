@@ -1,6 +1,5 @@
 import logo from '../../../../public/assets/logo/logo.svg';
-import NavControls from './partials/NavControls';
-import NavLinks from './partials/NavLinks';
+import { NavControls, NavLinks } from '../../Index';
 const NavBar = () => {
   return (
     <header className=" p-4 bg-white shadow-sm">

@@ -158,7 +158,6 @@ export const PRODUCTS: IProduct[] = [
     url: '/potty',
   },
 ];
-
 export const FEATURES = [
   {
     id: 1,

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button } from '../../components/Index';
+import { LoginForm } from '../../components/Index';
 
 const LoginPage = () => {
   return (
@@ -12,38 +12,7 @@ const LoginPage = () => {
             Login to access to your account
           </p>
           <div className="mt-4">
-            <form>
-              <div className="mb-4">
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  htmlFor="username"
-                >
-                  Username
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-relaxed focus:outline-primary focus:shadow-outline"
-                  id="username"
-                  type="text"
-                  placeholder="Enter your username"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-relaxed focus:outline-primary focus:shadow-outline"
-                  id="password"
-                  type="password"
-                  placeholder="Enter your password"
-                />
-              </div>
-
-              <Button type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2">Login</Button>
-            </form>
+            <LoginForm />
             <div className="flex flex-col items-center mt-4">
               <span className="text-xs">OR</span>
               <Link to="/register" className=" text-primary">
