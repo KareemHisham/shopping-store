@@ -1,7 +1,6 @@
-import AuthSideImg from './temp/AuthSideImg';
 import Pagination from './temp/Pagination';
 
-// Components
+// Layout
 import Footer from './layout/footer/Footer';
 import NavBar from './layout/nav/Nav';
 import NavControls from "./layout/nav/partials/NavControls"
@@ -17,7 +16,6 @@ import LoginForm from "./forms/LoginForm"
 import RegisterForm from "./forms/RegisterForm"
 
 import FooterList from './layout/footer/FooterList';
-import ProductCard from './temp/ProductCard';
 import MiniHero from './sections/hero/MiniHero';
 import Features from "./sections/features/Index"
 
@@ -29,9 +27,16 @@ import LoveIcon from './ui/svg/LoveIcon';
 import SearchIcon from './ui/svg/SearchIcon';
 import UserIcon from './ui/svg/UserIcon';
 
+// Shared
+import Loader from "./shared/Loader"
+import Spinner from './shared/Spinner';
+import AuthSideImg from './shared/AuthSideImg';
+import ProductCard from './shared/ProductCard';
+
 export {
   AuthSideImg,
   Button,
+  Spinner,
   IconBtn,
   CartIcon,
   LoveIcon,
@@ -50,5 +55,6 @@ export {
   ContactForm,
   CheckoutForm,
   LoginForm,
-  RegisterForm
+  RegisterForm,
+  Loader
 };

@@ -1,14 +1,29 @@
-
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { MiniHero } from '../../components/Index';
+
+import { MiniHero, Spinner } from '../../components/Index';
+
 import ProductOverview from '../../components/sections/product-overview';
-import { PRODUCTS } from '../../constant/Index';
 import ProductSpecs from '../../components/sections/product-specs/Index';
+import { fetchProductDetails } from '../../api/api';
+import { IProduct } from '../../constant/Interfaces';
+
 const ProductDetails = () => {
-  const { id } = useParams();
-  const product = PRODUCTS.find((product) => product.id == parseInt(id || ''));
+  const { id } = useParams() as { id: string };
+  const [product, setProduct] = useState<IProduct>({} as IProduct);
+  const [isLoading, setIsLoading] = useState(false);
+  console.log(id);
 
+  useEffect(() => {
+    const getProductInfo = async () => {
+      setIsLoading(true);
+      setProduct(await fetchProductDetails(parseInt(id)));
+      setIsLoading(false);
+    };
+    getProductInfo()
+  }, [id])
 
+  if (isLoading) return <Spinner />;
   return (
     <>
       <MiniHero

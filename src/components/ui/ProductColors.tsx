@@ -5,9 +5,9 @@ interface ColorsProps<T extends string[]> {
 const ProductColors = ({ colors, active }: ColorsProps<string[]>) => {
   return (
     <div className="text-sm ">
-      <h4 className="text-gray-300">Color</h4>
+      <h4 className="text-darkGrey">Color</h4>
       <div className="flex gap-4 mt-1">
-        {colors.map((color) => (
+        {colors?.map((color) => (
           <span
             key={color}
             className={`rounded-full w-6 h-6 text-sm text-center  p-1 ${

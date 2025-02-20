@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ProductCard } from '../../../components/Index.ts';
-import { PRODUCTS } from '../../../constant/Index';
-const ProductsSection = () => {
+import { IProduct } from '../../../constant/Interfaces.ts';
+const ProductsSection = ({ products }: { products: IProduct[] }) => {
   return (
     <section className="py-4">
       <div className="container">
@@ -9,7 +9,7 @@ const ProductsSection = () => {
           our products
         </h4>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-3 mb-4">
-          {PRODUCTS.map((product) => {
+          {products?.slice(0,4)?.map((product) => {
             return <ProductCard item={product} />;
           })}
         </div>

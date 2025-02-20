@@ -11,14 +11,17 @@ const LoginPage = () => {
           <p className="mt-2 text-base font-semibold text-grey">
             Login to access to your account
           </p>
+
           <div className="mt-4">
             <LoginForm />
+
             <div className="flex flex-col items-center mt-4">
               <span className="text-xs">OR</span>
               <Link to="/register" className=" text-primary">
                 Create an account
               </Link>
             </div>
+            
           </div>
         </div>
       </div>
