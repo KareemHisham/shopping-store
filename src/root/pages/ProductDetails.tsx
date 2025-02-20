@@ -1,29 +1,37 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetchProduct } from '@/lib/react-query';
 
 import { MiniHero, Spinner } from '../../components/Index';
+import { useToast } from "@/components/hooks/use-toast"
 
 import ProductOverview from '../../components/sections/product-overview';
 import ProductSpecs from '../../components/sections/product-specs/Index';
-import { fetchProductDetails } from '../../api/api';
 import { IProduct } from '../../constant/Interfaces';
 
 const ProductDetails = () => {
   const { id } = useParams() as { id: string };
-  const [product, setProduct] = useState<IProduct>({} as IProduct);
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(id);
+  const [product, setProduct] = useState<IProduct | null>(null);
+  const { data, isPending, error, isError } = useFetchProduct(id)
+  const { toast } = useToast();
+
+  if (error || isError) {
+    toast({
+      variant: "destructive",
+      className: "bg-red-600 text-white",
+      description: error.message,
+    });
+  }
 
   useEffect(() => {
     const getProductInfo = async () => {
-      setIsLoading(true);
-      setProduct(await fetchProductDetails(parseInt(id)));
-      setIsLoading(false);
+      if (data) {
+        setProduct(data[0])
+      }
     };
     getProductInfo()
-  }, [id])
+  }, [id, data])
 
-  if (isLoading) return <Spinner />;
   return (
     <>
       <MiniHero
@@ -34,6 +42,7 @@ const ProductDetails = () => {
         <h1 className="text-xl font-bold tracking-[5px]">Details</h1>
       </MiniHero>
       {product && <ProductOverview product={product} />}
+      {isPending && <Spinner />}
       {/* Product Specs */}
       <ProductSpecs />
     </>

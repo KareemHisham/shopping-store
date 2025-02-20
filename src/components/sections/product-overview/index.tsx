@@ -10,9 +10,9 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
   console.log(product);
   
   return (
-    <section className="w-full h-[180vh] md:h-[120vh]">
+    <section className="w-full h-[180vh] md:h-[120vh] py-4">
       <div className="container half-flex">
-        <ProductImages />
+        <ProductImages img={product.image} imgs={product.images} />
         <div className="w-full  md:w-7/12 h-4/6 md:h-full">
           <div className="h-4/6 flex flex-col md:justify-between gap-2 md:gap-0">
             <div>

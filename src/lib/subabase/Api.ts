@@ -1,5 +1,7 @@
-import { ICreateUser, INewUser } from "@/constant/Interfaces"
+import { ICreateUser, INewUser, IProduct } from "@/constant/Interfaces"
 import supabase from "./Config"
+
+// Auth APIS
 
 export const CreateNewUser = async (user: ICreateUser) => {
     try {
@@ -16,8 +18,6 @@ export const CreateNewUser = async (user: ICreateUser) => {
         throw new Error(error instanceof Error ? error.message : "An unknown error occurred");
     }
 }
-
-
 export const InsertNewUser = async (user: INewUser) => {
     try {
         const { data, error } = await supabase.from("users").insert([{
@@ -53,7 +53,6 @@ export const SignInUser = async (user: ICreateUser) => {
         throw new Error(error instanceof Error ? error.message : "An unknown error occurred")
     }
 }
-
 export const getCurrentAccount = async () => {
     try {
 
@@ -79,7 +78,6 @@ export const getCurrentAccount = async () => {
         throw new Error(error instanceof Error ? error.message : "An unknown error occurred")
     }
 }
-
 export const userLoggedout = async () => {
     try {
         const { error } = await supabase.auth.signOut();
@@ -91,4 +89,43 @@ export const userLoggedout = async () => {
     } catch (error) {
         throw new Error(error instanceof Error ? error.message : "An unknown error occurred")
     }
+}
+
+// Database APIS
+
+export const fetchProducts = async (): Promise<IProduct[]> => {
+    try {
+
+        const { data: products, error } = await supabase
+            .from('products')
+            .select('*')
+
+        if (error) {
+            throw new Error(error.message);
+        }
+
+        return products;
+
+    } catch (error) {
+        throw new Error(error instanceof Error ? error.message : "An unknown error occurred")
+    }
+}
+
+export const fetchProduct = async (id: string): Promise<IProduct[]> => {
+    try {
+        const { data: product, error } = await supabase
+            .from('products')
+            .select("*")
+            .eq("id", id);
+
+        if (error) {
+            throw new Error(error.message);
+        }
+
+        return product;
+
+    } catch (error) {
+        throw new Error(error instanceof Error ? error.message : "An unknown error occurred")
+    }
+
 }

@@ -25,7 +25,7 @@ export default {
 				xxl: ['46px'],
 			},
 			backgroundImage: {
-				'mini-hero': "url('./public/assets/collection/bg_miniHero.png')",
+				'mini-hero': "url('/public/assets/collection/bg_miniHero.png')",
 			},
 			screens: {
 				sm: '576px',
