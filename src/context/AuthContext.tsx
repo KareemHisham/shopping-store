@@ -51,8 +51,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
-
-
     const VALUE = {
         user,
         setUser,
@@ -60,7 +58,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         setIsLoading,
         isAuthenticated,
         setIsAuthenticated,
-        checkUser
+        checkUser,
     }
     return (
         <AuthContext.Provider value={VALUE}>{children}</AuthContext.Provider>

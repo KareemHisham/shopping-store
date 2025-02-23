@@ -24,13 +24,10 @@ const ProductDetails = () => {
   }
 
   useEffect(() => {
-    const getProductInfo = async () => {
-      if (data) {
-        setProduct(data[0])
-      }
-    };
-    getProductInfo()
-  }, [id, data])
+    if (data) {
+      setProduct(data[0])
+    }
+  }, [id, data]);
 
   return (
     <>

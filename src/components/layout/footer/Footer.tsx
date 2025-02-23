@@ -13,17 +13,17 @@ const Footer = () => {
                     </div>
 
                     <div className="mb-4 md:mb-0">
-                        <span className="footer_title mb-5 block">Links</span>
+                        <span className="footer_title mb-5 block font-bold text-base">Links</span>
                         <FooterList items={FOOTER_links} />
                     </div>
 
                     <div className="mb-4 md:mb-0">
-                        <span className="footer_title mb-5 block">Help</span>
+                        <span className="footer_title mb-5 block font-bold text-base">Help</span>
                         <FooterList items={FOOTER_HELPLIST} />
                     </div>
 
                     <div className="mb-4 md:mb-0">
-                        <span className="footer_title mb-5 block">NewsLetter</span>
+                        <span className="footer_title mb-5 block font-bold text-base">NewsLetter</span>
                         <form action="" method="POST" className="flex items-end gap-1">
                             <input type="email" name="email" placeholder="Enter your email" className="text-xs border-b-2 outline-none border-black bg-transparent" />
                             <button type="submit" className="text-[14px] border-b-2 border-black font-medium">Subscribe</button>

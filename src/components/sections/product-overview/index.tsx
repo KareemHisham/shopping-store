@@ -7,7 +7,6 @@ import Actions from './ProductActions';
 import ProductSummary from './ProductSummary';
 
 const ProductOverview = ({ product }: { product: IProduct }) => {
-  console.log(product);
   
   return (
     <section className="w-full h-[180vh] md:h-[120vh] py-4">
@@ -34,7 +33,7 @@ const ProductOverview = ({ product }: { product: IProduct }) => {
               colors={product.colors}
               active="#B88E2F"
             />
-            <Actions />
+            <Actions product={product} />
           </div>
           <ProductSummary sku={product.sku} category={product.category} tags={product.tags} />
         </div>

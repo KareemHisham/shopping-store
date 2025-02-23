@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/hooks/use-toast"
-import { Button, Loader } from "../Index"
+import { CsButton, Loader } from "../Index"
 import { useSignInUser } from "@/lib/react-query"
 import { useUserContext } from "@/context/AuthContext"
 
@@ -87,9 +87,9 @@ const LoginForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2" disabled={isPending ? true : false}>
+                <CsButton type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2" disabled={isPending ? true : false}>
                     {isPending ? <Loader /> : "Login"}
-                </Button>
+                </CsButton>
             </form>
         </Form>
     )

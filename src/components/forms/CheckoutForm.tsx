@@ -1,4 +1,4 @@
-import { Button } from "../Index"
+import { CsButton } from "../Index"
 
 const CheckoutForm = () => {
     return (
@@ -67,7 +67,7 @@ const CheckoutForm = () => {
                         <span className="text-primary font-bold text-lg">Rs. 250,000.00</span>
                     </li>
                 </ul>
-                <Button type="submit" classes="rounded-md border border-black text-sm py-1 px-12 mx-auto block mt-9">Place order</Button>
+                <CsButton type="submit" classes="rounded-md border border-black text-sm py-1 px-12 mx-auto block mt-9">Place order</CsButton>
             </div>
         </form>
     )

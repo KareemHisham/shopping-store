@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 export interface IButton {
-  type: 'submit' | 'button';
+  type: "submit" | "button";
   children: React.ReactNode;
   classes?: string;
-  disabled?: boolean,
-  onClick?: () => void
+  disabled?: boolean;
+  onClick?: () => void;
 }
 export interface IListItem {
   id: number;
@@ -14,7 +14,7 @@ export interface IListItem {
 }
 export interface IProduct {
   category: string;
-  id: number;
+  id: number | string;
   image: string;
   images: Array<string>;
   title: string;
@@ -24,12 +24,12 @@ export interface IProduct {
   reviewCount: number;
   stock: number;
   discount: number | null;
-  isNew: boolean;
+  is_new: boolean;
   url: string;
   sizes: Array<string>;
   colors: Array<string>;
-  sku: string,
-  tags: Array<string>
+  sku: string;
+  tags: Array<string>;
 }
 export interface IProgressItem {
   id: number;
@@ -48,14 +48,18 @@ export interface INewUser {
   name: string;
   phone: string;
   email: string | undefined;
-  accountID?: string
+  accountID?: string;
 }
 export interface IContextState {
-  user: INewUser,
-  setUser: React.Dispatch<React.SetStateAction<INewUser>>
-  isLoading: boolean,
-  isAuthenticated: boolean,
+  user: INewUser;
+  setUser: React.Dispatch<React.SetStateAction<INewUser>>;
+  isLoading: boolean;
+  isAuthenticated: boolean;
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
-  checkUser: () => Promise<boolean>,
-
+  checkUser: () => Promise<boolean>;
+}
+export interface ICartItems {
+  userID: string | number;
+  productID: string | number;
+  quantity: string | number;
 }

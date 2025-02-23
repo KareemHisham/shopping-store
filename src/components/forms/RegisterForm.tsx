@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/hooks/use-toast"
-import { Button, Loader } from "../Index"
+import { CsButton, Loader } from "../Index"
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -116,9 +116,9 @@ const RegisterForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2" disabled={isPending ? true : false}>
+        <CsButton type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2" disabled={isPending ? true : false}>
           {isPending ? <Loader /> : "Register"}
-        </Button>
+        </CsButton>
       </form>
     </Form>
   )

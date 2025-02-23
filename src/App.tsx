@@ -6,11 +6,14 @@ import {
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import { LoginPage, AuthLayout, Register } from './auth/Index.ts';
-import { RootLayout, HomePage, Products, ProductDetails, ContactUs, Cart, Checkout } from "./root/Index.ts"
+import { RootLayout, HomePage, Products, ProductDetails, ContactUs, Cart, Checkout, Notfound } from "./root/Index.ts"
 
 import { Toaster } from "@/components/ui/toaster"
 
 const AppRouter = createBrowserRouter([
+  {
+    errorElement: <Notfound />
+  },
   {
     path: '/',
     element: <RootLayout />,

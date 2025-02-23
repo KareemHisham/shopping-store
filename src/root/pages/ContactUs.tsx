@@ -27,7 +27,7 @@ const ContactUs = () => {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto">
                         {/* Address */}
-                        <div className="mb-10 md:mb-0">
+                        <div className="mb-10 md:mb-0 flex flex-col gap-11">
                             <address className="flex items-baseline gap-2 mb-5">
                                 <span>
                                     <FaLocationDot />

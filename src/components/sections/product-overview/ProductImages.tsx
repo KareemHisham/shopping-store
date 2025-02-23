@@ -1,4 +1,4 @@
-import { Button } from "@/components/Index";
+import { CsButton } from "@/components/Index";
 
 const ProductImages = ({ img, imgs }: { img: string, imgs: string[] }) => {
 
@@ -14,9 +14,9 @@ const ProductImages = ({ img, imgs }: { img: string, imgs: string[] }) => {
       <div className="flex flex-col gap-2">
         {imgs.map((photo, index) => {
           return (
-            <Button type="button" classes="w-[100px] flex-1" key={index} onClick={() => handleChange(photo)}>
+            <CsButton type="button" classes="w-[100px] flex-1" key={index} onClick={() => handleChange(photo)}>
               <img src={photo} alt="" loading="lazy" className="rounded-lg object-cover" />
-            </Button>
+            </CsButton>
           )
         })}
       </div>

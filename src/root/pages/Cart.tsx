@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { MiniHero, Features, Button } from "../../components/Index"
+import { MiniHero, Features, CsButton } from "../../components/Index"
 import logoIcon from "../../../public/assets/logo/favicon.png"
 import cartImg from "../../../public/assets/collection/cart_item.png"
 
@@ -37,7 +37,7 @@ const Cart = () => {
                                 </div>
                                 <div className="table-cell text-xs">Rs. 250,000.00</div>
                                 <div className="table-cell">
-                                    <Button type="button" classes="text-primary"><FaTrash /></Button>
+                                    <CsButton type="button" classes="text-primary"><FaTrash /></CsButton>
                                 </div>
                             </div>
                         </div>

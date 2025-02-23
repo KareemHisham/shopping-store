@@ -1,7 +1,7 @@
 import {FEATURES} from "../../../constant/Index"
 const Features = () => {
   return (
-    <section className="py-3 mt-6 bg-tertiary">
+    <section className="py-3 my-6 bg-tertiary">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:justify-items-start lg:justify-items-center">
       {FEATURES.map((feature) => {
         return (
