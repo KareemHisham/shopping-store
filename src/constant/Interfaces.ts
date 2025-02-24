@@ -61,5 +61,5 @@ export interface IContextState {
 export interface ICartItems {
   userID: string | number;
   productID: string | number;
-  quantity: string | number;
+  quantity: number;
 }

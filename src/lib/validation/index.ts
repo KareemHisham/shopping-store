@@ -34,5 +34,26 @@ export const ContactValidation = z.object({
 });
 
 export const CartValidation = z.object({
-  quantity: z.coerce.number().min(0,{message:"Quantity must be greater than 1"}),
+  quantity: z.coerce
+    .number()
+    .min(0, { message: "Quantity must be greater than 1" }),
+});
+
+export const CheckoutValidation = z.object({
+  firstname: z.coerce
+    .string()
+    .min(4, { message: "First Name must be at least 4 character" }),
+  secondname: z.coerce
+    .string()
+    .min(4, { message: "Last Name must be at least 4 character" }),
+  street: z.coerce
+    .string()
+    .min(4, { message: "Street must be at least 4 character" }),
+  city: z.coerce
+    .string()
+    .min(4, { message: "City must be at least 4 character" }),
+  email: z.coerce.string().email(),
+  phone: z.coerce
+    .number()
+    .min(4, { message: "Phone number must be at least 4 character" }),
 });
