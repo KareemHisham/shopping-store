@@ -2,7 +2,6 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
-// import { useGetCartItems } from "@/lib/react-query"
 import { CheckoutValidation } from "@/lib/validation"
 
 import {
@@ -16,21 +15,22 @@ import {
 import { Input } from "@/components/ui/input"
 
 import { CsButton } from "../Index"
-import { getCartItems } from "@/lib/subabase/Api"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { ICheckProduct } from "@/constant/Interfaces"
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ cartItems }: { cartItems: ICheckProduct[] }) => {
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        const getCheckItem = async () => {
-            const cartItems = await getCartItems();
-            console.log(cartItems);
+        setTotal(cartItems.reduce((acc, item) => acc + item.products.price * item.quantity, 0));
 
-
-        }
-        getCheckItem();
-    }, [])
-
+        // this is also correct
+        // let currentTotal = 0;
+        // products.map(item => {
+        //     currentTotal += item.products.price * item.quantity;
+        // })
+        // setTotal(currentTotal)
+    }, [cartItems])
 
 
     // 1. Define your form.
@@ -145,27 +145,31 @@ const CheckoutForm = () => {
                         )}
                     />
                 </div>
-
                 <div className=" basis-5/12">
                     <ul className="border-b border-lightGrey">
                         <li className="flex_wrapper mb-4">
                             <span className="font-medium text-base">Product</span>
                             <span className="font-medium text-base">Subtotal</span>
                         </li>
-                        <li className="mb-4">
-                            <ol>
-                                <li className="flex_wrapper mb-4">
-                                    <div>
-                                        <span className="text-lightGrey">Product 1</span>
-                                        <span>X 1</span>
-                                    </div>
-                                    <span>Rs. 100,000.00</span>
+                        {cartItems.length > 0 && cartItems.map(product => {
+                            return (
+                                <li className="mb-4" key={product.products.id}>
+                                    <ol>
+                                        <li className="flex_wrapper mb-4">
+                                            <div>
+                                                <span className="text-lightGrey">{product.products.title}</span>
+                                                <span className="text-sm text-dark"> ({product.quantity} * {product.products.price}) </span>
+                                            </div>
+                                            <span>$ {product.quantity * product.products.price}</span>
+                                        </li>
+                                    </ol>
                                 </li>
-                            </ol>
-                        </li>
+                            )
+                        })}
+
                         <li className="flex_wrapper mb-4">
                             <span>Total</span>
-                            <span className="text-primary font-bold text-lg">Rs. 250,000.00</span>
+                            <span className="text-primary font-bold text-lg">$ {total}</span>
                         </li>
                     </ul>
                     <CsButton type="submit" classes="bg-primary text-white text-bases w-full rounded-sm shadow-md p-2">

@@ -11,6 +11,7 @@ import {
   updateCartItem,
   userLoggedout,
   updateProduct,
+  getCheckoutProducts,
 } from "../subabase/Api";
 import { ICreateUser, INewUser } from "@/constant/Interfaces";
 
@@ -69,7 +70,7 @@ export const useUpdateProductStock = () => {
     mutationFn: ({ stock, id }: { stock: number; id: string }) =>
       updateProduct({ stock, id }),
   });
-}
+};
 
 // Cart Queries
 export const useAddToCart = () => {
@@ -84,9 +85,13 @@ export const useAddToCart = () => {
   });
 };
 
-export const useGetCartItems = ()=>{
-  return useQuery({queryKey:['cartItems'],queryFn:getCartItems,staleTime:1000*60*5})
-}
+export const useGetCartItems = () => {
+  return useQuery({
+    queryKey: ["cartItems"],
+    queryFn: getCartItems,
+    staleTime: 1000 * 60 * 5,
+  });
+};
 
 export const useUpdateCartItem = () => {
   return useMutation({
@@ -97,5 +102,14 @@ export const useUpdateCartItem = () => {
       productID: string;
       quantity: number;
     }) => updateCartItem({ productID, quantity }),
+  });
+};
+
+export const useCheckoutProducts = () => {
+  return useQuery({
+    queryKey: ["checkoutProducts"],
+    queryFn: getCheckoutProducts,
+    staleTime: 1000 * 60 * 5,
+    refetchInterval: 1000 * 10,
   });
 };

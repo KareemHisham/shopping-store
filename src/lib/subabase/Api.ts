@@ -3,6 +3,7 @@ import {
   ICreateUser,
   INewUser,
   IProduct,
+  ICheckProduct,
 } from "@/constant/Interfaces";
 import supabase from "./Config";
 
@@ -241,6 +242,27 @@ export const deleteCartItem = async (id: number) => {
     const { error } = await supabase.from("cart").delete().eq("id", id);
 
     if (error) throw new Error(error.message);
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "An unknown error occurred"
+    );
+  }
+};
+
+export const getCheckoutProducts = async (): Promise<ICheckProduct[]> => {
+  try {
+    const { data, error } = await supabase
+      .from("cart")
+      .select("quantity,products(id,price,title)")
+      .eq("userID", (await supabase.auth.getUser()).data.user?.id);
+
+    if (error) throw new Error(error.message);
+    if (!data) return [];
+
+    return data.map((item) => ({
+      quantity: Number(item.quantity),
+      products: item.products as IProduct[], 
+    }));
   } catch (error) {
     throw new Error(
       error instanceof Error ? error.message : "An unknown error occurred"

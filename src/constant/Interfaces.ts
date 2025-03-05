@@ -63,3 +63,7 @@ export interface ICartItems {
   productID: string | number;
   quantity: number;
 }
+export interface ICheckProduct {
+    quantity: number,
+    products: IProduct
+}
