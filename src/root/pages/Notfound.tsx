@@ -1,11 +1,15 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link, useRouteError, isRouteErrorResponse } from "react-router-dom";
 import styles from "@/root/error.module.css";
 
 const { errorContainer, four, zero, screen_reader_text, backHome } = styles;
 const Notfound = () => {
     const error = useRouteError();
-    console.log(typeof error)
-    console.log(error)
+    let errorStatusText: string | null = null;
+
+    if (isRouteErrorResponse(error)) {
+        errorStatusText = error.statusText
+    }
+
     return (
         <section className={errorContainer}>
             <span className={four}>
@@ -17,7 +21,7 @@ const Notfound = () => {
             <span className={four}>
                 <span className={screen_reader_text}>4</span>
             </span>
-            <p>{error.message || error.statusText}</p>
+            <p>{errorStatusText}</p>
             <Link to="/" replace={true} className={backHome}>
                 GO HOME
             </Link>

@@ -51,7 +51,7 @@ export const useFetchProducts = () => {
 
 export const useFetchProduct = (id: string) => {
   return useQuery({
-    queryKey: ["producID"],
+    queryKey: ["producID",{id}],
     queryFn: () => fetchProduct(id),
     staleTime: 1000 * 60 * 5,
   });

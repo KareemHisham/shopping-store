@@ -148,7 +148,7 @@ const CheckoutForm = ({ cartItems }: { cartItems: ICheckProduct[] }) => {
                 <div className=" basis-5/12">
                     <ul className="border-b border-lightGrey">
                         <li className="flex_wrapper mb-4">
-                            <span className="font-medium text-base">Product</span>
+                            <span className="font-medium text-base">Items</span>
                             <span className="font-medium text-base">Subtotal</span>
                         </li>
                         {cartItems.length > 0 && cartItems.map(product => {
@@ -160,7 +160,7 @@ const CheckoutForm = ({ cartItems }: { cartItems: ICheckProduct[] }) => {
                                                 <span className="text-lightGrey">{product.products.title}</span>
                                                 <span className="text-sm text-dark"> ({product.quantity} * {product.products.price}) </span>
                                             </div>
-                                            <span>$ {product.quantity * product.products.price}</span>
+                                            <span>${product.quantity * product.products.price}</span>
                                         </li>
                                     </ol>
                                 </li>

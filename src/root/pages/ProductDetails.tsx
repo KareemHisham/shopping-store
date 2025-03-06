@@ -6,7 +6,6 @@ import { MiniHero, Spinner } from '../../components/Index';
 import { useToast } from "@/components/hooks/use-toast"
 
 import ProductOverview from '../../components/sections/product-overview';
-import ProductSpecs from '../../components/sections/product-specs/Index';
 import { IProduct } from '../../constant/Interfaces';
 
 const ProductDetails = () => {
@@ -15,19 +14,33 @@ const ProductDetails = () => {
   const { data, isPending, error, isError } = useFetchProduct(id)
   const { toast } = useToast();
 
-  if (error || isError) {
-    toast({
-      variant: "destructive",
-      className: "bg-red-600 text-white",
-      description: error.message,
-    });
-  }
+  // Handle errors
+  useEffect(() => {
+    if (error || isError) {
+      toast({
+        variant: "destructive",
+        className: "bg-red-600 text-white",
+        description: error.message,
+      });
+    }
+  }, [error, isError, toast]);
 
   useEffect(() => {
     if (data) {
-      setProduct(data[0])
+      const matchedProduct = data.find((item) => item.id == id);
+
+      if (matchedProduct) {
+        setProduct(matchedProduct);
+      } else {
+        setProduct(null); // No matching product found
+        toast({
+          variant: "destructive",
+          className: "bg-red-600 text-white",
+          description: "No matching product found",
+        });
+      }
     }
-  }, [id, data]);
+  }, [id, data, toast]);
 
   return (
     <>
@@ -40,8 +53,6 @@ const ProductDetails = () => {
       </MiniHero>
       {product && <ProductOverview product={product} />}
       {isPending && <Spinner />}
-      {/* Product Specs */}
-      <ProductSpecs />
     </>
   );
 };

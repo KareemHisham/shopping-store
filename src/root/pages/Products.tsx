@@ -5,25 +5,24 @@ import { IProduct } from '../../constant/Interfaces';
 import { useToast } from "@/components/hooks/use-toast"
 import { MiniHero, Pagination, ProductCard, Features, Spinner } from '../../components/Index';
 const Products = () => {
-  const [products, setProducts] = useState<IProduct[]>([]);
+  const [products, setProducts] = useState<IProduct[] | null>([]);
   const { toast } = useToast();
   const { data, isPending, error, isError } = useFetchProducts()
 
-  if (error || isError) {
-    toast({
-      variant: "destructive",
-      className: "bg-red-600 text-white",
-      description: error.message,
-    });
-  }
+  // Handle errors
+  useEffect(() => {
+    if (error || isError) {
+      toast({
+        variant: "destructive",
+        className: "bg-red-600 text-white",
+        description: error.message,
+      });
+    }
+  }, [error, isError, toast]);
 
   useEffect(() => {
-    const getProductAPI = async () => {
-      if (data) {
-        setProducts(data);
-      }
-    };
-    getProductAPI();
+    if (data)
+      setProducts(data);
   }, [data])
 
   return (
@@ -33,7 +32,7 @@ const Products = () => {
       </MiniHero>
 
       {isPending && <Spinner />}
-      
+
       {/* Products */}
       <section className="py-4">
         <div className="container">
