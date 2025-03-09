@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -15,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input"
 
 import { CsButton } from "../Index"
-import { useEffect, useState } from "react"
 import { ICheckProduct } from "@/constant/Interfaces"
 
 const CheckoutForm = ({ cartItems }: { cartItems: ICheckProduct[] }) => {

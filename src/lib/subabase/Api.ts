@@ -146,7 +146,6 @@ export const getNewProducts = async (): Promise<IProduct[]> => {
     );
   }
 };
-
 export const updateProduct = async ({
   stock,
   id,
@@ -248,12 +247,11 @@ export const deleteCartItem = async (id: number) => {
     );
   }
 };
-
 export const getCheckoutProducts = async (): Promise<ICheckProduct[]> => {
   try {
     const { data, error } = await supabase
       .from("cart")
-      .select("quantity,products(id,price,title)")
+      .select("quantity,products(*)")
       .eq("userID", (await supabase.auth.getUser()).data.user?.id);
 
     if (error) throw new Error(error.message);
@@ -261,11 +259,15 @@ export const getCheckoutProducts = async (): Promise<ICheckProduct[]> => {
 
     return data.map((item) => ({
       quantity: Number(item.quantity),
-      products: item.products as IProduct[], 
+      products: item.products as IProduct[],
     }));
   } catch (error) {
     throw new Error(
       error instanceof Error ? error.message : "An unknown error occurred"
     );
   }
+};
+export const deleteItemCart = async (id: number) => {
+  const { error } = await supabase.from("cart").delete().eq("productID", id);
+  if (error) throw new Error(error.message);
 };

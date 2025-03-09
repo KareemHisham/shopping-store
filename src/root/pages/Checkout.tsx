@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useCheckoutProducts } from "@/lib/react-query"
 import { ICheckProduct } from "@/constant/Interfaces"
-import { MiniHero, Features, CheckoutForm } from "../../components/Index"
+import { MiniHero, Features, CheckoutForm, NoItemsFound } from "../../components/Index"
 import logoIcon from "../../../public/assets/logo/favicon.png"
 // import { getCheckoutProducts } from "@/lib/subabase/Api";
 const Checkout = () => {
@@ -33,10 +32,7 @@ const Checkout = () => {
             <section className="py-5">
                 <div className="md:w-3/5 md:mx-auto">
                     <h2 className="font-semibold text-lg mb-7">Billing details</h2>
-                    {!products?.length ? (<p className="bg-primary text-white text-center font-bold py-2 flex flex-col">
-                        <span>  No Items in your cart</span>
-                        <Link to="/products" className="underline">Shopping now</Link>
-                    </p>) : <CheckoutForm cartItems={products} />}
+                    {!products?.length ? (<NoItemsFound />) : <CheckoutForm cartItems={products} />}
 
                 </div>
             </section>

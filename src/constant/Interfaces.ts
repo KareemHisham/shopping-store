@@ -14,7 +14,7 @@ export interface IListItem {
 }
 export interface IProduct {
   category: string;
-  id: number | string;
+  id: number;
   image: string;
   images: Array<string>;
   title: string;

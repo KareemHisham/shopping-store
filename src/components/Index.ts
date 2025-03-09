@@ -9,6 +9,7 @@ import NavLinks from "./layout/nav/partials/NavLinks";
 // Sections
 import ProductsSection from "./sections/products/index";
 import NewProducts from "./sections/homepage/NewProducts";
+import CartTable from "./sections/cart/CartTable"
 
 // Forms
 import ContactForm from "./forms/ContactForm";
@@ -33,6 +34,7 @@ import Loader from "./shared/Loader";
 import Spinner from "./shared/Spinner";
 import AuthSideImg from "./shared/AuthSideImg";
 import ProductCard from "./shared/ProductCard";
+import NoItemsFound from "./shared/NoItemsFound";
 
 export {
   AuthSideImg,
@@ -59,4 +61,6 @@ export {
   RegisterForm,
   Loader,
   NewProducts,
+  NoItemsFound,
+  CartTable
 };

@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   addToCart,
   CreateNewUser,
@@ -51,7 +51,7 @@ export const useFetchProducts = () => {
 
 export const useFetchProduct = (id: string) => {
   return useQuery({
-    queryKey: ["producID",{id}],
+    queryKey: ["producID", { id }],
     queryFn: () => fetchProduct(id),
     staleTime: 1000 * 60 * 5,
   });
@@ -74,6 +74,7 @@ export const useUpdateProductStock = () => {
 
 // Cart Queries
 export const useAddToCart = () => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({
       productID,
@@ -82,6 +83,12 @@ export const useAddToCart = () => {
       productID: string;
       quantity: number;
     }) => addToCart({ productID, quantity }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["cartItems"] }); // Refetch the cart data after adding a product
+    },
+    onError: (error: Error) => {
+      console.error("Error adding product to cart:", error.message);
+    },
   });
 };
 
@@ -94,6 +101,7 @@ export const useGetCartItems = () => {
 };
 
 export const useUpdateCartItem = () => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({
       productID,
@@ -102,8 +110,53 @@ export const useUpdateCartItem = () => {
       productID: string;
       quantity: number;
     }) => updateCartItem({ productID, quantity }),
+    onSuccess: () => {
+     queryClient.invalidateQueries({ queryKey: ["cartItems"] }); // Refetch the cart data after adding a product
+    },
+    onError: (error: Error) => {
+      console.error("Error adding product to cart:", error.message);
+    },
   });
 };
+
+
+
+// export const useUpdateCartItem = () => {
+//   const queryClient = useQueryClient();
+
+//   return useMutation({
+//     mutationFn: async ({ productID, quantity }: { productID: string; quantity: number }) => {
+//       return updateCartItem({ productID, quantity });
+//     },
+    
+//     onMutate: async ({ productID, quantity }) => {
+//       await queryClient.cancelQueries({ queryKey: ["cartItems"] }); // Cancel ongoing cart queries
+
+//       const previousCart = queryClient.getQueryData<{ productID: string; quantity: number }[]>(["cartItems"]); // Get current cart state
+
+//       // Optimistically update cart data
+//       queryClient.setQueryData(["cartItems"], (oldCart: { productID: string; quantity: number }[] | undefined) => {
+//         return oldCart
+//           ? oldCart.map((item) =>
+//               item.productID === productID ? { ...item, quantity } : item
+//             )
+//           : [];
+//       });
+
+//       return { previousCart }; // Save previous state for rollback in case of error
+//     },
+
+//     onError: (_err, _newData, context) => {
+//       queryClient.setQueryData(["cartItems"], context?.previousCart); // Rollback on error
+//     },
+
+//     onSettled: () => {
+//       queryClient.invalidateQueries({ queryKey: ["cartItems"] }); // Ensure the cart syncs with the database
+//     },
+//   });
+// };
+
+
 
 export const useCheckoutProducts = () => {
   return useQuery({

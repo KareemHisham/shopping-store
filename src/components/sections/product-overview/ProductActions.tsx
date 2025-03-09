@@ -54,10 +54,8 @@ const Actions = ({ product }: { product: IProduct }) => {
         className: "bg-red-600 text-white",
         description: "You must be logged in",
       });
+      return;
     }
-
-    // update Product Stock
-    updateProductStock({ stock: (product.stock - quantity), id: product.id.toString() })
 
     // check Product Quantity
     if (product.stock < quantity || product.stock == 0) {
@@ -66,8 +64,11 @@ const Actions = ({ product }: { product: IProduct }) => {
         className: "bg-red-600 text-white",
         description: "Insufficient quantity",
       });
-      return;
+      return false;
     }
+
+    // update Product Stock
+    updateProductStock({ stock: (product.stock - quantity), id: product.id.toString() })
 
     // Add/Update Cart Item
     try {
@@ -121,7 +122,7 @@ const Actions = ({ product }: { product: IProduct }) => {
     <div className="flex gap-2 ">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex items-start justify-start gap-3">
-          <CsButton type="button" classes="border border-primary rounded-[5px] p-3 text-sm" onClick={handleQuantityDecreament}>
+          <CsButton type="button" classes="border border-primary rounded-[5px] p-3 text-sm" onClick={handleQuantityDecreament} disabled={product.stock === 0 ? true : false}>
             <FaMinus />
           </CsButton>
 
@@ -138,12 +139,12 @@ const Actions = ({ product }: { product: IProduct }) => {
             )}
           />
 
-          <CsButton type="button" classes="border border-primary rounded-[5px] p-3 text-sm" onClick={handleQuantityIncreament}>
+          <CsButton type="button" classes="border border-primary rounded-[5px] p-3 text-sm" onClick={handleQuantityIncreament} disabled={product.stock === 0 ? true : false}>
             <FaPlus />
           </CsButton>
 
-          <CsButton type="submit" classes="border border-primary rounded-[5px] p-3 text-sm font-bold" disabled={addCartPending || updateCartPending ? true : false}>
-            {addCartPending || updateCartPending ? <Loader btnColor="text-primary" /> : "Add To Cart"}
+          <CsButton type="submit" classes={`border rounded-[5px] p-3 text-sm font-bold ${product.stock === 0 ? "border-red-500" : "border-primary"}`} disabled={addCartPending || updateCartPending || product.stock == 0 ? true : false}>
+            {product.stock === 0 ? (<span className="text-red-500">Out of Stock</span>) : addCartPending || updateCartPending ? <Loader btnColor="text-primary" /> : "Add To Cart"}
           </CsButton>
         </form>
       </Form>

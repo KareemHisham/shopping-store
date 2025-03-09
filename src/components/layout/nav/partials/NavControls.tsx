@@ -1,5 +1,5 @@
 import { INITIAL_USER, useUserContext } from "@/context/AuthContext";
-import { CsButton, CartIcon, IconBtn, LoveIcon, UserIcon } from "../../../Index";
+import { CartIcon, IconBtn, UserIcon } from "../../../Index";
 import { MdLogout } from "react-icons/md";
 
 import {
@@ -48,21 +48,8 @@ const NavControls = () => {
           </Tooltip>
         </TooltipProvider>
       }
-      {/* favourite */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger>
-            <IconBtn url="favourite">
-              <LoveIcon />
-            </IconBtn>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Favourite</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
       {/* Cart */}
-      <TooltipProvider>
+      {isAuthenticated && <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
             <IconBtn url="cart">
@@ -74,14 +61,14 @@ const NavControls = () => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      }
+
       {/* Logout */}
       {isAuthenticated && (
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger>
-              <CsButton type="button" onClick={handleLogout}>
-                <MdLogout size={25} />
-              </CsButton>
+            <TooltipTrigger onClick={handleLogout}>
+              <MdLogout size={25} />
             </TooltipTrigger>
             <TooltipContent>
               <p>Logout</p>
